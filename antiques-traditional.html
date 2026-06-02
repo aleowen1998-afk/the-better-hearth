@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antiques & Traditional Fireplaces - Fireplace Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-page {
+            margin-top: 102px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .product-header h1 {
+            font-size: 48px;
+            color: #6B0000;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 18px;
+            color: #333;
+            text-align: justify;
+        }
+        .product-description p {
+            margin-bottom: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: #6B0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #8B0000;
+        }
+        .models-section {
+            margin-top: 60px;
+        }
+        .models-title {
+            font-size: 36px;
+            color: #6B0000;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        .model-card-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .model-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .model-card-name {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <img src="Better Hearth Logo.png" alt="The Better Hearth logo" class="banner-logo">
+            <button class="mobile-menu-button" type="button" aria-label="Open navigation menu">☰</button>
+            <a href="index.html" class="banner-button">Home</a>
+            <div class="products-dropdown">
+                <a href="#" class="banner-button">Products</a>
+                <div class="dropdown-menu">
+                    <a href="antiques-traditional.html" class="dropdown-item">Antiques & Traditional Fireplaces</a>
+                    <a href="made-to-measure.html" class="dropdown-item">Made to Measure gas fires</a>
+                    <a href="wooburning-multifuel.html" class="dropdown-item">Woodburning and multifuel stoves</a>
+                    <a href="inset-gas-fires.html" class="dropdown-item">Inset gas fires and stoves</a>
+                    <a href="electric-stoves.html" class="dropdown-item">Electric Stoves & Media Wall Fires</a>
+                    <a href="mantels.html" class="dropdown-item">Mantels</a>
+                    <a href="bioethanol-fires.html" class="dropdown-item">Bioethanol Fires</a>
+                </div>
+            </div>
+            <a href="installations.html" class="banner-button">Installations</a>
+            <a href="showroom.html" class="banner-button">Our Showroom</a>
+            <a href="index.html#contact" class="banner-button">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="product-page">
+        <div class="product-header">
+            <h1>Antiques & Traditional Fireplaces</h1>
+        </div>
+        
+        <img src="Antique (1).png" alt="Antiques & Traditional Fireplaces" class="product-image">
+        
+        <div class="product-description">
+            <p>We offer a comprehensive range of antique and reproduction cast iron fireplaces, carefully selected to bring timeless elegance and character to your home. Our collection includes everything from traditional inserts and mantels to registers and baskets, each piece chosen for its quality, authenticity, and aesthetic appeal.</p>
+            
+            <p>Our antique fireplaces are genuine period pieces, sourced from reputable dealers and restored to their former glory. For those who prefer new construction, we also offer high-quality reproductions that capture the essence of original designs with modern reliability.</p>
+        </div>
+        
+        <div class="models-section">
+            <h2 class="models-title">Our Models</h2>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/small-cast-iron-insert.webp" alt="Small Cast Iron Insert"></div>
+                    <div class="model-card-name">Small Cast Iron Insert</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/small-cast-iron-insert-2.webp" alt="Small Cast Iron Insert 2"></div>
+                    <div class="model-card-name">Small Cast Iron Insert 2</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/polished-tiled-register.webp" alt="Polished Tiled Register"></div>
+                    <div class="model-card-name">Polished Tiled Register</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/polished-tiled-register-2.webp" alt="Polished Tiled Register 2"></div>
+                    <div class="model-card-name">Polished Tiled Register 2</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/polished-cast-iron-mantel.webp" alt="Polished Cast Iron Mantel"></div>
+                    <div class="model-card-name">Polished Cast Iron Mantel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/polished-cast-iron-mantel-2.webp" alt="Polished Cast Iron Mantel 2"></div>
+                    <div class="model-card-name">Polished Cast Iron Mantel 2</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/polished-cast-iron-insert-edited.webp" alt="Polished Cast Iron Insert_edited"></div>
+                    <div class="model-card-name">Polished Cast Iron Insert_edited</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/highlight-cast-iron-insert.webp" alt="Highlight Cast Iron Insert"></div>
+                    <div class="model-card-name">Highlight Cast Iron Insert</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-register.webp" alt="Cast Iron Register"></div>
+                    <div class="model-card-name">Cast Iron Register</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-register-3.webp" alt="Cast Iron Register 3"></div>
+                    <div class="model-card-name">Cast Iron Register 3</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-register-2.webp" alt="Cast Iron Register 2"></div>
+                    <div class="model-card-name">Cast Iron Register 2</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-mantel.webp" alt="Cast Iron Mantel"></div>
+                    <div class="model-card-name">Cast Iron Mantel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-insert.webp" alt="Cast Iron Insert"></div>
+                    <div class="model-card-name">Cast Iron Insert</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-insert-6.webp" alt="Cast Iron Insert 6"></div>
+                    <div class="model-card-name">Cast Iron Insert 6</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-insert-5.webp" alt="Cast Iron Insert 5"></div>
+                    <div class="model-card-name">Cast Iron Insert 5</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-insert-4.webp" alt="Cast Iron Insert 4"></div>
+                    <div class="model-card-name">Cast Iron Insert 4</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-insert-3.webp" alt="Cast Iron Insert 3"></div>
+                    <div class="model-card-name">Cast Iron Insert 3</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="antiques/cast-iron-insert-2.webp" alt="Cast Iron Insert 2"></div>
+                    <div class="model-card-name">Cast Iron Insert 2</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Better Hearth</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-banner">
+        <div class="banner-content">
+            <img src="Better Hearth Logo.png" alt="The Better Hearth logo" class="banner-logo">
+            <button class="mobile-menu-button" type="button" aria-label="Open navigation menu">☰</button>
+            <a href="#home" class="banner-button">Home</a>
+            <div class="products-dropdown">
+                <a href="#" class="banner-button">Products</a>
+                <div class="dropdown-menu">
+                    <a href="antiques-traditional.html" class="dropdown-item">Antiques & Traditional Fireplaces</a>
+                    <a href="made-to-measure.html" class="dropdown-item">Made to Measure gas fires</a>
+                    <a href="wooburning-multifuel.html" class="dropdown-item">Woodburning and multifuel stoves</a>
+                    <a href="inset-gas-fires.html" class="dropdown-item">Inset gas fires and stoves</a>
+                    <a href="electric-stoves.html" class="dropdown-item">Electric Stoves & Media Wall Fires</a>
+                    <a href="mantels.html" class="dropdown-item">Mantels</a>
+                    <a href="bioethanol-fires.html" class="dropdown-item">Bioethanol Fires</a>
+                </div>
+            </div>
+            <a href="installations.html" class="banner-button">Installations</a>
+            <a href="showroom.html" class="banner-button">Our Showroom</a>
+            <a href="#contact" class="banner-button">Contact Us</a>
+        </div>
+    </div>
+
+    <div id="home" class="hero-slider">
+        <div class="slide active">
+            <div class="slide-overlay"></div>
+            <img src="Antique (1).png" alt="Antiques & Traditional Fireplaces" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Antiques & Traditional Fireplaces</h1>
+                <p class="slide-subtitle">We offer a range of antique and reproduction cast iron fireplaces, from traditional inserts and mantels to registers and baskets.</p>
+                <a href="antiques-traditional.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-overlay"></div>
+            <img src="made.png" alt="Made to Measure gas fires" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Made to Measure gas fires</h1>
+                <p class="slide-subtitle">We offer gas fires made to size, which can fit almost any cast iron insert or basket. These open gas fires offer a realistic, simple to use and low-maintenance decorative flame.</p>
+                <a href="made-to-measure.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-overlay"></div>
+            <img src="wood (1).png" alt="Woodburning and Multifuel Stoves" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Woodburning and Multifuel Stoves</h1>
+                <p class="slide-subtitle">We have a huge range of stoves that are approved for installation in smoke control areas (like London) and are made to conform to the latest regulations.</p>
+                <a href="wooburning-multifuel.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-overlay"></div>
+            <img src="inset.png" alt="Inset gas fires and stoves" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Inset gas fires and stoves</h1>
+                <p class="slide-subtitle">Inset gas fires are a more convenient option than a traditional wood-fuelled setup, and we offer a range of options from modern glass-fronted fires to more traditional looking stoves.</p>
+                <a href="inset-gas-fires.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-overlay"></div>
+            <img src="eletric.png" alt="Electric Stoves & Media Wall Fires" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Electric Stoves & Media Wall Fires</h1>
+                <p class="slide-subtitle">Electric fires can be incorporated into a modern media wall setup or can be used as an alternative to wood or gas fires when other options aren't suitable for the space.</p>
+                <a href="electric-stoves.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-overlay"></div>
+            <img src="Mantels.png" alt="Mantels" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Mantels</h1>
+                <p class="slide-subtitle">We have many mantels in a wide range of styles and sizes. Our most popular options are made from white marble, but we offer lots of other materials such as limestone, wood and cast iron.</p>
+                <a href="mantels.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="slide-overlay"></div>
+            <img src="bio.png" alt="Bioethanol Fires" class="slide-image">
+            <div class="slide-content">
+                <h1 class="slide-title">Bioethanol Fires</h1>
+                <p class="slide-subtitle">Bioethanol fires combine the convenience of electric fires with a real flame. We offer fires to go into traditional inserts as well as standalone units.</p>
+                <a href="bioethanol-fires.html" class="see-more-button">See More</a>
+            </div>
+        </div>
+
+        <button class="slider-arrow slider-arrow-left" id="prevArrow" aria-label="Previous slide">‹</button>
+        <button class="slider-arrow slider-arrow-right" id="nextArrow" aria-label="Next slide">›</button>
+
+        <div class="slider-nav">
+            <div class="nav-dot active" data-slide="0"></div>
+            <div class="nav-dot" data-slide="1"></div>
+            <div class="nav-dot" data-slide="2"></div>
+            <div class="nav-dot" data-slide="3"></div>
+            <div class="nav-dot" data-slide="4"></div>
+            <div class="nav-dot" data-slide="5"></div>
+            <div class="nav-dot" data-slide="6"></div>
+        </div>
+    </div>
+
+    <section class="showroom-section">
+        <div class="showroom-container">
+            <div class="showroom-content">
+                <div class="showroom-text">
+                    <h2 class="showroom-title">Our Showroom</h2>
+                    <p class="showroom-subtitle">Supplying fireplaces, mantels and stoves to London and the Southeast.</p>
+                    <p class="showroom-description">Visit us in North London to browse antique and contemporary fireplaces, working stoves, bespoke fire options and a wide selection of surrounds and mantels. Our family-run team can help you compare styles in person and find the right focal point for your home.</p>
+                    <a href="showroom.html" class="visit-showroom-button">Visit our showroom</a>
+                </div>
+                <div class="showroom-image-wrapper">
+                    <img src="Shopfront.jpg" alt="The Better Hearth shopfront" class="showroom-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="installations" class="installations-section">
+        <div class="installations-container">
+            <div class="installations-header">
+                <h2 class="installations-title">Our Installations</h2>
+                <p class="installations-intro">From restored period fireplaces to contemporary gas, electric and wood-burning solutions, our installations are tailored to suit each home. Browse a preview below, then open the full gallery to see every installation image.</p>
+            </div>
+
+            <div class="installations-grid installations-grid-preview" id="installationsGrid" data-preview-rows="3"></div>
+            <div class="installations-actions">
+                <a href="installations.html" class="view-gallery-button">See all</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="location-container">
+            <h2 class="location-title">Our Location</h2>
+            <div class="location-map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.0914942691898!2d-0.10940082337746047!3d51.54822127182258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b706c37a037%3A0x130d3c8ef6f69102!2sThe%20Better%20Hearth!5e0!3m2!1sen!2sgb!4v1771968789030!5m2!1sen!2sgb&hl=en" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="instagram-section">
+        <div class="instagram-container">
+            <div class="instagram-header">
+                <svg class="instagram-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.22 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <h2 class="instagram-title">Follow us on Instagram</h2>
+                <a href="https://www.instagram.com/thebetterhearth" target="_blank" class="instagram-handle">@thebetterhearth</a>
+            </div>
+            <div class="instagram-grid">
+                <a href="https://www.instagram.com/thebetterhearth/" target="_blank" rel="noopener noreferrer" class="instagram-slot">
+                    <img src="instatbh1.jpg" alt="Instagram Post 1" class="instagram-image">
+                </a>
+                <a href="https://www.instagram.com/thebetterhearth/" target="_blank" rel="noopener noreferrer" class="instagram-slot">
+                    <img src="instathb2.jpg" alt="Instagram Post 2" class="instagram-image">
+                </a>
+                <a href="https://www.instagram.com/thebetterhearth/" target="_blank" rel="noopener noreferrer" class="instagram-slot">
+                    <img src="instathb3.jpg" alt="Instagram Post 3" class="instagram-image">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="contact-title">Contact Us</h2>
+            <div class="contact-simple">
+                <p class="contact-intro">For more information, get in touch at</p>
+                <a href="mailto:info@thebetterhearth.com" class="contact-link">info@thebetterhearth.com</a>
+                <a href="tel:02076093245" class="contact-link">020 7609 3245</a>
+                <p class="contact-address">109 Holloway Road<br>London<br>N7 8LT</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content gallery-modal-content" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
+            <button class="modal-close" id="modalClose" aria-label="Close gallery">&times;</button>
+            <div class="gallery-modal-header">
+                <h2 class="modal-title" id="galleryTitle">Installation Gallery</h2>
+                <p class="modal-caption" id="galleryCaption"></p>
+                <p class="gallery-counter" id="galleryCounter"></p>
+            </div>
+            <div class="gallery-slider">
+                <button class="gallery-arrow gallery-arrow-left" id="galleryPrev" aria-label="Previous image">‹</button>
+                <div class="gallery-slides-container">
+                    <div class="gallery-slide active">
+                        <img src="" alt="" class="gallery-image" id="galleryActiveImage">
+                    </div>
+                </div>
+                <button class="gallery-arrow gallery-arrow-right" id="galleryNext" aria-label="Next image">›</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">The Better Hearth</h3>
+                    <p class="footer-description">Supplying fireplaces, mantels and stoves to London and the Southeast. A family run business since 1976.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="showroom.html">Our Showroom</a></li>
+                        <li><a href="installations.html">Installations</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Contact</h4>
+                    <div class="footer-contact">
+                        <p><strong>Address:</strong><br>109 Holloway Road<br>London, N7 8LT</p>
+                        <p><strong>Phone:</strong> <a href="tel:02076093245">020 7609 3245</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@thebetterhearth.com">info@thebetterhearth.com</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Opening Hours</h4>
+                    <div class="footer-hours">
+                        <p>Monday - Thursday: 10am - 5pm</p>
+                        <p>Friday: 10am - 5pm</p>
+                        <p>Saturday: 10am - 5pm</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/thebetterhearth" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg class="footer-instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <span>@thebetterhearth</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-heading">Brands We Stock</h4>
+                    <div class="footer-badges">
+                        <div class="footer-badge"><img src="Company badges/Esse.png" alt="Esse badge"></div>
+                        <div class="footer-badge"><img src="Company badges/Capital.png" alt="Capital badge"></div>
+                        <div class="footer-badge"><img src="Company badges/Stovax Gazco.png" alt="Stovax Gazco badge"></div>
+                        <div class="footer-badge"><img src="Company badges/Eurostove-Logo.png" alt="Eurostove badge"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2024 The Better Hearth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

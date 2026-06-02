@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantels - Fireplace Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-page {
+            margin-top: 102px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .product-header h1 {
+            font-size: 48px;
+            color: #6B0000;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 18px;
+            color: #333;
+            text-align: justify;
+        }
+        .product-description p {
+            margin-bottom: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: #6B0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #8B0000;
+        }
+        .models-section {
+            margin-top: 60px;
+        }
+        .models-title {
+            font-size: 36px;
+            color: #6B0000;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        .model-card-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .model-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .model-card-name {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <img src="Better Hearth Logo.png" alt="The Better Hearth logo" class="banner-logo">
+            <button class="mobile-menu-button" type="button" aria-label="Open navigation menu">☰</button>
+            <a href="index.html" class="banner-button">Home</a>
+            <div class="products-dropdown">
+                <a href="#" class="banner-button">Products</a>
+                <div class="dropdown-menu">
+                    <a href="antiques-traditional.html" class="dropdown-item">Antiques & Traditional Fireplaces</a>
+                    <a href="made-to-measure.html" class="dropdown-item">Made to Measure gas fires</a>
+                    <a href="wooburning-multifuel.html" class="dropdown-item">Woodburning and multifuel stoves</a>
+                    <a href="inset-gas-fires.html" class="dropdown-item">Inset gas fires and stoves</a>
+                    <a href="electric-stoves.html" class="dropdown-item">Electric Stoves & Media Wall Fires</a>
+                    <a href="mantels.html" class="dropdown-item">Mantels</a>
+                    <a href="bioethanol-fires.html" class="dropdown-item">Bioethanol Fires</a>
+                </div>
+            </div>
+            <a href="installations.html" class="banner-button">Installations</a>
+            <a href="showroom.html" class="banner-button">Our Showroom</a>
+            <a href="index.html#contact" class="banner-button">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="product-page">
+        <div class="product-header">
+            <h1>Mantels</h1>
+        </div>
+        
+        <img src="Mantels.png" alt="Mantels" class="product-image">
+        
+        <div class="product-description">
+            <p>We offer an extensive collection of mantels in a wide range of styles, sizes, and materials, providing the perfect finishing touch to complete your fireplace installation. Our mantels serve as elegant focal points that enhance the overall character and aesthetic appeal of your fireplace.</p>
+            
+            <p>Our most popular mantels are crafted from beautiful white marble, offering timeless elegance and sophistication. In addition to marble, we offer mantels in limestone, wood, and cast iron to suit different tastes and design requirements. Each mantel can be customized to fit your specific fireplace opening and room dimensions.</p>
+        </div>
+        
+        <div class="models-section">
+            <h2 class="models-title">Our Models</h2>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/products-page-mantels-black-marble-roundel.webp" alt="Black Marble Roundel"></div>
+                    <div class="model-card-name">Black Marble Roundel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/alban-limestone.webp" alt="Alban Limestone"></div>
+                    <div class="model-card-name">Alban Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/appledore-limestone.webp" alt="Appledore Limestone"></div>
+                    <div class="model-card-name">Appledore Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/balham-limestone.webp" alt="Balham Limestone"></div>
+                    <div class="model-card-name">Balham Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/bellingham-limestone.webp" alt="Bellingham Limestone"></div>
+                    <div class="model-card-name">Bellingham Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/bolection-limestone.webp" alt="Bolection Limestone"></div>
+                    <div class="model-card-name">Bolection Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/bolection-mantel-limestone-marble.webp" alt="Bolection Mantel Limestone"></div>
+                    <div class="model-card-name">Bolection Mantel Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/cannonbury-clarence-limestone.webp" alt="Cannonbury Clarence Limestone"></div>
+                    <div class="model-card-name">Cannonbury Clarence Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/cannonbury-limestone.webp" alt="Cannonbury Limestone"></div>
+                    <div class="model-card-name">Cannonbury Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/corbel-carraramarble.webp" alt="Corbel Carrara Marble"></div>
+                    <div class="model-card-name">Corbel Carrara Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/corbel-limestone.webp" alt="Corbel Limestone"></div>
+                    <div class="model-card-name">Corbel Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/cushioned-bolection-limestone.webp" alt="Cushioned Bolection Limestone"></div>
+                    <div class="model-card-name">Cushioned Bolection Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/flat-victorian-carramarble.webp" alt="Flat Victorian Carrara Marble"></div>
+                    <div class="model-card-name">Flat Victorian Carrara Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/flat-victorian-limestone.webp" alt="Flat Victorian Limestone"></div>
+                    <div class="model-card-name">Flat Victorian Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/flat-victorian-stone-mantel-marble-limestone.webp" alt="Flat Victorian Stone Mantel Limestone"></div>
+                    <div class="model-card-name">Flat Victorian Stone Mantel Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/grey-pembroke-mantel-wooden.webp" alt="Grey Pembroke Mantel Wooden"></div>
+                    <div class="model-card-name">Grey Pembroke Mantel Wooden</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/lingwood-limestone.webp" alt="Lingwood Limestone"></div>
+                    <div class="model-card-name">Lingwood Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/luxor-limestone.webp" alt="Luxor Limestone"></div>
+                    <div class="model-card-name">Luxor Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/marseilles-limestone.webp" alt="Marseilles Limestone"></div>
+                    <div class="model-card-name">Marseilles Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/mentmore-limestone.webp" alt="Mentmore Limestone"></div>
+                    <div class="model-card-name">Mentmore Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/roseland-limestone.webp" alt="Roseland Limestone"></div>
+                    <div class="model-card-name">Roseland Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/roundel-carraramarble.webp" alt="Roundel Carrara Marble"></div>
+                    <div class="model-card-name">Roundel Carrara Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/roundel-limestone.webp" alt="Roundel Limestone"></div>
+                    <div class="model-card-name">Roundel Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/roundel-stone-mantel-marble-limestone.webp" alt="Roundel Stone Mantel Marble"></div>
+                    <div class="model-card-name">Roundel Stone Mantel Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/silsoe-cararramarble.webp" alt="Silsoe Carrara Marble"></div>
+                    <div class="model-card-name">Silsoe Carrara Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/silsoe-limestone.webp" alt="Silsoe Limestone"></div>
+                    <div class="model-card-name">Silsoe Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/swinford-limestone.webp" alt="Swinford Limestone"></div>
+                    <div class="model-card-name">Swinford Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/victorian-corbel-marble-limestone.webp" alt="Victorian Corbel Marble"></div>
+                    <div class="model-card-name">Victorian Corbel Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/washington-cararramarble.webp" alt="Washington Carrara Marble"></div>
+                    <div class="model-card-name">Washington Carrara Marble</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/wilton-limestone.webp" alt="Wilton Limestone"></div>
+                    <div class="model-card-name">Wilton Limestone</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/winterfold-timber.webp" alt="Winterfold Timber"></div>
+                    <div class="model-card-name">Winterfold Timber</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/victorian-cutout-castiron.webp" alt="Victorian Cutout Cast Iron"></div>
+                    <div class="model-card-name">Victorian Cutout Cast Iron</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/georgian-castiron-mantel.webp" alt="Georgian Cast Iron Mantel"></div>
+                    <div class="model-card-name">Georgian Cast Iron Mantel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/adam-wood-mantel.webp" alt="Adam Wood Mantel"></div>
+                    <div class="model-card-name">Adam Wood Mantel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/trent-range-timber.webp" alt="Trent Range Timber"></div>
+                    <div class="model-card-name">Trent Range Timber</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/chatsworth-wood-mantel.webp" alt="Chatsworth Wood Mantel"></div>
+                    <div class="model-card-name">Chatsworth Wood Mantel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/regency-wood-mantel.webp" alt="Regency Wood Mantel"></div>
+                    <div class="model-card-name">Regency Wood Mantel</div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-image"><img src="Mantels/wingfield-timber.webp" alt="Wingfield Timber"></div>
+                    <div class="model-card-name">Wingfield Timber</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+

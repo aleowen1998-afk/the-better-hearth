@@ -1,0 +1,7 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Optional local notes (not needed on the live site)
+image-sources-reference.md
