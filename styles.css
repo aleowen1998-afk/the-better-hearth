@@ -821,6 +821,15 @@ body.modal-open {
     overflow: hidden;
 }
 
+.clickable-gallery-image {
+    cursor: pointer;
+}
+
+.clickable-gallery-image:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
 /* Our Showroom Section */
 .showroom-section {
     padding: 100px 20px;
@@ -1739,6 +1748,10 @@ body.modal-open {
 .gallery-counter {
     margin: 8px 0 0;
     color: #666666;
+}
+
+.modal-caption:empty {
+    display: none;
 }
 
 .gallery-modal-content .gallery-slider {

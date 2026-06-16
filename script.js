@@ -245,6 +245,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryActiveImage = document.getElementById('galleryActiveImage');
     let currentGalleryIndex = 0;
 
+    function getImageTitle(image) {
+        const cardTitle = image.closest('.model-card')?.querySelector('.model-card-name')?.textContent;
+        return (cardTitle || image.alt || '').trim();
+    }
+
+    function ensureImageLightbox() {
+        let lightbox = document.getElementById('imageLightbox');
+        if (lightbox) {
+            return lightbox;
+        }
+
+        lightbox = document.createElement('div');
+        lightbox.className = 'gallery-modal';
+        lightbox.id = 'imageLightbox';
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.innerHTML = `
+            <div class="modal-overlay" data-image-lightbox-close></div>
+            <div class="modal-content gallery-modal-content" role="dialog" aria-modal="true" aria-labelledby="imageLightboxTitle">
+                <button class="modal-close" type="button" data-image-lightbox-close aria-label="Close image">&times;</button>
+                <div class="gallery-modal-header">
+                    <h2 class="modal-title" id="imageLightboxTitle"></h2>
+                </div>
+                <div class="gallery-slider">
+                    <div class="gallery-slides-container">
+                        <div class="gallery-slide active">
+                            <img src="" alt="" class="gallery-image" id="imageLightboxImage">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+
+        lightbox.querySelectorAll('[data-image-lightbox-close]').forEach((closeButton) => {
+            closeButton.addEventListener('click', closeImageLightbox);
+        });
+
+        return lightbox;
+    }
+
+    function closeImageLightbox() {
+        const lightbox = document.getElementById('imageLightbox');
+        if (!lightbox) {
+            return;
+        }
+
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    }
+
+    function openImageLightbox(image) {
+        const lightbox = ensureImageLightbox();
+        const lightboxImage = lightbox.querySelector('#imageLightboxImage');
+        const lightboxTitle = lightbox.querySelector('#imageLightboxTitle');
+        const title = getImageTitle(image);
+
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = title;
+        lightboxTitle.textContent = title;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+
+    document.querySelectorAll('.product-image, .model-card-image img').forEach((image) => {
+        image.classList.add('clickable-gallery-image');
+        image.tabIndex = 0;
+        image.setAttribute('role', 'button');
+        image.setAttribute('aria-label', `Open ${getImageTitle(image) || 'image'}`);
+        image.addEventListener('click', () => openImageLightbox(image));
+        image.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openImageLightbox(image);
+            }
+        });
+    });
+
     function formatInstallationTitle(fileName) {
         return fileName
             .replace(/\.[^.]+$/, '')
@@ -264,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryActiveImage.src = `Installation photos/${fileName}`;
         galleryActiveImage.alt = title;
         galleryTitle.textContent = title;
-        galleryCaption.textContent = title;
+        galleryCaption.textContent = '';
         galleryCounter.textContent = `${safeIndex + 1} / ${installationImages.length}`;
     }
 
@@ -429,5 +508,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeImageLightbox();
+        }
+    });
 });
 
