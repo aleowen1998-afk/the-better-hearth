@@ -350,8 +350,8 @@ body {
         display: none;
     }
 
-    .top-banner:focus-within .banner-content > .banner-button,
-    .top-banner:focus-within .banner-content > .products-dropdown {
+    .top-banner.mobile-menu-open .banner-content > .banner-button,
+    .top-banner.mobile-menu-open .banner-content > .products-dropdown {
         display: block;
         flex: 0 0 100%;
         width: 100%;

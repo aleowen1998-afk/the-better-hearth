@@ -159,6 +159,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     let slideInterval;
 
+    document.querySelectorAll('.top-banner').forEach((topBanner) => {
+        const menuButton = topBanner.querySelector('.mobile-menu-button');
+        if (!menuButton) {
+            return;
+        }
+
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.addEventListener('click', () => {
+            const isOpen = topBanner.classList.toggle('mobile-menu-open');
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+            menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        });
+
+        topBanner.querySelectorAll('.banner-button[href], .dropdown-item[href], .banner-logo-link[href]').forEach((link) => {
+            link.addEventListener('click', () => {
+                topBanner.classList.remove('mobile-menu-open');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open navigation menu');
+            });
+        });
+    });
+
     function showSlide(index) {
         slides.forEach((slide, slideIndex) => {
             slide.classList.toggle('active', slideIndex === index);
