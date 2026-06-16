@@ -1,3 +1,11 @@
+:root {
+    --color-primary: #8f1d1d;
+    --color-primary-hover: #a82525;
+    --color-accent: #d4a574;
+    --color-dark: #2c2c2c;
+    --navbar-height: 68px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +23,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #8f1d1d;
+    background-color: var(--color-primary);
     color: white;
-    padding: 15px 0;
+    padding: 8px 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -28,15 +36,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 18px;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 0 16px;
+}
+
+.banner-logo-link {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    text-decoration: none;
+}
+
+.banner-logo-link:hover .banner-logo,
+.banner-logo-link:focus-visible .banner-logo {
+    opacity: 0.9;
 }
 
 .banner-logo {
-    height: 72px;
+    height: 52px;
     width: auto;
-    margin-right: auto;
     object-fit: contain;
 }
 
@@ -47,25 +67,32 @@ body {
     border-radius: 4px;
     color: white;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1;
-    padding: 6px 10px;
+    padding: 4px 8px;
 }
 
 .banner-button {
     background: none;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    padding: 8px 15px;
+    padding: 5px 10px;
     transition: color 0.3s;
     text-decoration: none;
 }
 
 .banner-button:hover {
-    color: #d4a574;
+    color: var(--color-accent);
+}
+
+.product-page,
+.showroom-page,
+.installations-page,
+.terms-page {
+    margin-top: var(--navbar-height);
 }
 
 /* Products Dropdown */
@@ -90,7 +117,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #2c2c2c;
+    background-color: var(--color-dark);
     min-width: 250px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     opacity: 0;
@@ -110,9 +137,10 @@ body {
 
 .dropdown-item {
     display: block;
-    padding: 12px 20px;
+    padding: 10px 16px;
     color: white;
     text-decoration: none;
+    font-size: 14px;
     transition: background-color 0.3s, color 0.3s;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -123,7 +151,7 @@ body {
 
 .dropdown-item:hover {
     background-color: #3c3c3c;
-    color: #d4a574;
+    color: var(--color-accent);
 }
 
 /* Hero Slider */
@@ -132,7 +160,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    margin-top: 60px;
+    margin-top: var(--navbar-height);
 }
 
 .slide {
@@ -291,24 +319,30 @@ body {
 }
 
 @media (max-width: 768px) {
+    :root {
+        --navbar-height: 48px;
+    }
+
     .top-banner {
-        padding: 12px 0;
+        padding: 6px 0;
     }
 
     .banner-logo {
-        height: 48px;
+        height: 36px;
     }
 
     .banner-content {
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         justify-content: space-between;
-        padding: 0 16px;
+        padding: 0 12px;
         position: relative;
     }
 
     .mobile-menu-button {
         display: block;
+        font-size: 20px;
+        padding: 3px 7px;
     }
 
     .banner-content > .banner-button,
@@ -324,8 +358,8 @@ body {
     }
 
     .banner-button {
-        font-size: 14px;
-        padding: 10px 12px;
+        font-size: 13px;
+        padding: 8px 10px;
         text-align: left;
         width: 100%;
     }
@@ -350,8 +384,8 @@ body {
     }
 
     .dropdown-item {
-        font-size: 14px;
-        padding: 10px 16px;
+        font-size: 13px;
+        padding: 8px 12px;
     }
 
     .slider-arrow {
@@ -436,7 +470,7 @@ body {
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 80px;
     opacity: 0;
     transform: translateY(30px);
@@ -544,7 +578,7 @@ body {
     display: block;
     margin: 60px auto 0;
     padding: 15px 40px;
-    background-color: #6B0000;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     font-size: 1.1rem;
@@ -558,9 +592,9 @@ body {
 }
 
 .view-gallery-button:hover {
-    background-color: #8B0000;
+    background-color: var(--color-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(107, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(143, 29, 29, 0.3);
 }
 
 .view-gallery-button:active {
@@ -662,7 +696,7 @@ body {
 }
 
 .modal-close:hover {
-    color: #d4a574;
+    color: var(--color-accent);
     transform: rotate(90deg);
 }
 
@@ -739,8 +773,8 @@ body {
 }
 
 .gallery-arrow:hover {
-    background-color: #d4a574;
-    border-color: #d4a574;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
     color: white;
     transform: translateY(-50%) scale(1.1);
 }
@@ -828,7 +862,7 @@ body.modal-open {
 
 .showroom-title {
     font-size: 3rem;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 20px;
     font-weight: bold;
     position: relative;
@@ -842,7 +876,7 @@ body.modal-open {
     left: 0;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #6B0000, #d4a574);
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
     border-radius: 2px;
 }
 
@@ -864,14 +898,14 @@ body.modal-open {
 .visit-showroom-button {
     display: inline-block;
     padding: 15px 40px;
-    background-color: #6B0000;
+    background-color: var(--color-primary);
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(107, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(143, 29, 29, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -892,9 +926,9 @@ body.modal-open {
 }
 
 .visit-showroom-button:hover {
-    background-color: #8B0000;
+    background-color: var(--color-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(143, 29, 29, 0.4);
 }
 
 .visit-showroom-button:active {
@@ -944,7 +978,7 @@ body.modal-open {
 .location-title {
     text-align: center;
     font-size: 3rem;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 40px;
     font-weight: bold;
     padding: 0 20px;
@@ -988,14 +1022,14 @@ body.modal-open {
 .instagram-logo {
     width: 50px;
     height: 50px;
-    fill: #6B0000;
+    fill: var(--color-primary);
     margin-bottom: 20px;
     display: inline-block;
 }
 
 .instagram-title {
     font-size: 2.5rem;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 15px;
     font-weight: bold;
 }
@@ -1003,7 +1037,7 @@ body.modal-open {
 .instagram-handle {
     display: inline-block;
     font-size: 1.3rem;
-    color: #6B0000;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -1011,7 +1045,7 @@ body.modal-open {
 
 .instagram-handle:hover {
     transform: scale(1.05);
-    color: #8B0000;
+    color: var(--color-primary-hover);
 }
 
 .instagram-grid {
@@ -1083,7 +1117,7 @@ body.modal-open {
 .contact-title {
     text-align: center;
     font-size: 3.5rem;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 30px;
     font-weight: bold;
     position: relative;
@@ -1099,7 +1133,7 @@ body.modal-open {
     transform: translateX(-50%);
     width: 120px;
     height: 4px;
-    background: linear-gradient(90deg, #6B0000, #d4a574);
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
     border-radius: 2px;
 }
 
@@ -1140,7 +1174,7 @@ body.modal-open {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid #6B0000;
+    border-left: 4px solid var(--color-primary);
 }
 
 .contact-info-item:hover {
@@ -1155,13 +1189,13 @@ body.modal-open {
 
 .contact-info-item h3 {
     font-size: 1.1rem;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 .contact-link {
-    color: #6B0000;
+    color: var(--color-primary);
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease;
@@ -1169,7 +1203,7 @@ body.modal-open {
 }
 
 .contact-link:hover {
-    color: #8B0000;
+    color: var(--color-primary-hover);
     text-decoration: underline;
 }
 
@@ -1209,12 +1243,12 @@ body.modal-open {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #6B0000;
+    border-left: 4px solid var(--color-primary);
 }
 
 .form-title {
     font-size: 1.8rem;
-    color: #6B0000;
+    color: var(--color-primary);
     margin-bottom: 30px;
     font-weight: bold;
 }
@@ -1251,8 +1285,8 @@ body.modal-open {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #6B0000;
-    box-shadow: 0 0 0 3px rgba(107, 0, 0, 0.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(143, 29, 29, 0.1);
     background: white;
 }
 
@@ -1263,7 +1297,7 @@ body.modal-open {
 
 .submit-button {
     padding: 15px 40px;
-    background-color: #6B0000;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -1271,14 +1305,14 @@ body.modal-open {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(107, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(143, 29, 29, 0.3);
     margin-top: 10px;
 }
 
 .submit-button:hover {
-    background-color: #8B0000;
+    background-color: var(--color-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(143, 29, 29, 0.4);
 }
 
 .submit-button:active {
@@ -1430,7 +1464,7 @@ body.modal-open {
 
 .footer-title {
     font-size: 1.8rem;
-    color: #d4a574;
+    color: var(--color-accent);
     margin-bottom: 15px;
     font-weight: bold;
 }
@@ -1444,7 +1478,7 @@ body.modal-open {
 
 .footer-heading {
     font-size: 1.2rem;
-    color: #d4a574;
+    color: var(--color-accent);
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -1471,7 +1505,7 @@ body.modal-open {
 }
 
 .footer-links a:hover {
-    color: #d4a574;
+    color: var(--color-accent);
     padding-left: 5px;
 }
 
@@ -1495,7 +1529,7 @@ body.modal-open {
 }
 
 .footer-contact a {
-    color: #d4a574;
+    color: var(--color-accent);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -1534,7 +1568,7 @@ body.modal-open {
 }
 
 .footer-social-link:hover {
-    color: #d4a574;
+    color: var(--color-accent);
 }
 
 .footer-instagram-icon {
@@ -1626,7 +1660,7 @@ body.modal-open {
 }
 
 .installation-category-title {
-    color: #6B0000;
+    color: var(--color-primary);
     font-size: 2rem;
     margin-bottom: 22px;
     text-align: left;
@@ -1670,7 +1704,7 @@ body.modal-open {
 }
 
 .installation-grid-button:focus-visible {
-    outline: 3px solid #d4a574;
+    outline: 3px solid var(--color-accent);
     outline-offset: -3px;
 }
 

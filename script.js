@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Carrara marble _Reeded Roundel_ mantel, slate slips.jpg",
         "Carrara marble _Roundel_ mantel, original insert.JPG",
         "Cast iron mantel, _Better Hearth Arch_ insert, gas fire.jpg",
-        "Cast iron mantel, _Norpeis Bergen_ stove.jpg",
+        "Cast iron mantel, _Nordpeis Bergen_ stove.jpg",
         "Cast iron mantel, original insert.jpg",
         "Cast iron original mantel, highlight tiled insert.jpg",
         "Green marble _Bolection_ mantel, polished basket.jpg",
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const installationCategories = [
         {
-            name: "Cast Iron Inserts",
+            name: "Cast iron inserts",
             matches: (title) => /\b(insert|register|arch|basket|cast iron insert|cast iron register)\b/i.test(title)
         },
         {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             matches: (title) => /\b(mantel|marble|limestone|wooden|slate slips)\b/i.test(title)
         },
         {
-            name: "Gas Fires",
+            name: "Gas fires",
             matches: (title) => /\b(gas fire|inset gas fire|logic|riva2|reflex)\b/i.test(title)
         },
         {
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             matches: (title) => /\b(stove|freestanding|bassington|huntingdon|holsworthy|sheraton|stockton|studio|vue|westfire|esse|futura|vogue|nordpeis|loft|woodland)\b/i.test(title)
         },
         {
-            name: "Electric Fires",
+            name: "Electric fires",
             matches: (title) => /\b(electric|ereflex|emotiv|iconic|sle|provident)\b/i.test(title)
         }
     ];
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getInstallationCategoryName(fileName) {
         const title = formatInstallationTitle(fileName);
-        const categoryPriority = ["Electric Fires", "Gas Fires", "Stoves", "Cast Iron Inserts", "Mantels"];
+        const categoryPriority = ["Electric fires", "Gas fires", "Stoves", "Cast iron inserts", "Mantels"];
         const category = categoryPriority
             .map((categoryName) => installationCategories.find((categoryItem) => categoryItem.name === categoryName))
             .find((categoryItem) => categoryItem && categoryItem.matches(title));

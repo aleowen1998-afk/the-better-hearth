@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Showroom - The Better Hearth</title>
+    <title>Our showroom - The Better Hearth</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .showroom-page {
-            margin-top: 102px;
             padding: 80px 20px;
             max-width: 1400px;
             margin-left: auto;
@@ -20,7 +19,7 @@
         }
         .showroom-header h1 {
             font-size: 56px;
-            color: #6B0000;
+            color: var(--color-primary);
             margin-bottom: 20px;
             font-weight: bold;
             position: relative;
@@ -34,7 +33,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, #6B0000, #d4a574);
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
             border-radius: 2px;
         }
         .showroom-content-block {
@@ -86,7 +85,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(107, 0, 0, 0.05) 0%, rgba(212, 165, 116, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(143, 29, 29, 0.05) 0%, rgba(212, 165, 116, 0.05) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -118,12 +117,12 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: linear-gradient(180deg, #6B0000, #d4a574);
+            background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
             border-radius: 15px 0 0 15px;
         }
         .showroom-text-content h2 {
             font-size: 36px;
-            color: #6B0000;
+            color: var(--color-primary);
             margin-bottom: 25px;
             font-weight: bold;
             line-height: 1.2;
@@ -138,18 +137,18 @@
             display: inline-block;
             margin-top: 60px;
             padding: 15px 40px;
-            background-color: #6B0000;
+            background-color: var(--color-primary);
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(107, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(143, 29, 29, 0.3);
         }
         .back-button:hover {
-            background-color: #8B0000;
+            background-color: var(--color-primary-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(107, 0, 0, 0.4);
+            box-shadow: 0 6px 20px rgba(143, 29, 29, 0.4);
         }
         @media (max-width: 968px) {
             .showroom-content-block {
@@ -174,30 +173,30 @@
 <body>
     <div class="top-banner">
         <div class="banner-content">
-            <img src="Better Hearth Logo.png" alt="The Better Hearth logo" class="banner-logo">
+            <a href="index.html" class="banner-logo-link" aria-label="Home"><img src="Better Hearth Logo.png" alt="" class="banner-logo"></a>
             <button class="mobile-menu-button" type="button" aria-label="Open navigation menu">☰</button>
             <a href="index.html" class="banner-button">Home</a>
             <div class="products-dropdown">
                 <a href="#" class="banner-button">Products</a>
                 <div class="dropdown-menu">
-                    <a href="antiques-traditional.html" class="dropdown-item">Antiques & Traditional Fireplaces</a>
+                    <a href="antiques-traditional.html" class="dropdown-item">Antiques & traditional fireplaces</a>
                     <a href="made-to-measure.html" class="dropdown-item">Made to Measure gas fires</a>
-                    <a href="wooburning-multifuel.html" class="dropdown-item">Woodburning and multifuel stoves</a>
+                    <a href="woodburning-multifuel.html" class="dropdown-item">Woodburning and multifuel stoves</a>
                     <a href="inset-gas-fires.html" class="dropdown-item">Inset gas fires and stoves</a>
-                    <a href="electric-stoves.html" class="dropdown-item">Electric Stoves & Media Wall Fires</a>
+                    <a href="electric-stoves.html" class="dropdown-item">Electric stoves & media wall fires</a>
                     <a href="mantels.html" class="dropdown-item">Mantels</a>
-                    <a href="bioethanol-fires.html" class="dropdown-item">Bioethanol Fires</a>
+                    <a href="bioethanol-fires.html" class="dropdown-item">Bioethanol fires</a>
                 </div>
             </div>
             <a href="installations.html" class="banner-button">Installations</a>
-            <a href="showroom.html" class="banner-button">Our Showroom</a>
-            <a href="index.html#contact" class="banner-button">Contact Us</a>
+            <a href="showroom.html" class="banner-button">Our showroom</a>
+            <a href="index.html#contact" class="banner-button">Contact us</a>
         </div>
     </div>
 
     <div class="showroom-page">
         <div class="showroom-header">
-            <h1>Our Showroom</h1>
+            <h1>Our showroom</h1>
         </div>
         
         <div class="showroom-content-block">
@@ -207,7 +206,7 @@
                 </div>
             </div>
             <div class="showroom-text-content">
-                <h2>Our Showroom</h2>
+                <h2>Our showroom</h2>
                 <p>We have been trading from the same premises in Islington, North London since 1976. We are a short walk from both Highbury & Islington and Holloway Road stations, and you can visit us Monday to Saturday from 10am to 5pm with no appointment needed.</p>
             </div>
         </div>
@@ -225,7 +224,7 @@
         </div>
         
         <div style="text-align: center;">
-            <a href="index.html" class="back-button">Back to Home</a>
+            <a href="index.html" class="back-button">Back to home</a>
         </div>
     </div>
 
@@ -234,17 +233,17 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="footer-title">The Better Hearth</h3>
-                    <p class="footer-description">Supplying fireplaces, mantels and stoves to London and the Southeast. A family run business since 1976.</p>
+                    <p class="footer-description">Supplying fireplaces, mantels and stoves to London and the south-east. A family run business since 1976.</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Quick Links</h4>
+                    <h4 class="footer-heading">Quick links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="showroom.html">Our Showroom</a></li>
+                        <li><a href="showroom.html">Our showroom</a></li>
                         <li><a href="installations.html">Installations</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
-                        <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="index.html#contact">Contact us</a></li>
+                        <li><a href="terms-and-conditions.html">Terms & conditions</a></li>
                     </ul>
                 </div>
 
@@ -258,7 +257,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Opening Hours</h4>
+                    <h4 class="footer-heading">Opening hours</h4>
                     <div class="footer-hours">
                         <p>Monday - Thursday: 10am - 5pm</p>
                         <p>Friday: 10am - 5pm</p>
@@ -276,7 +275,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4 class="footer-heading">Brands We Stock</h4>
+                    <h4 class="footer-heading">Brands we stock</h4>
                     <div class="footer-badges">
                         <div class="footer-badge"><img src="Company badges/Esse.png" alt="Esse badge"></div>
                         <div class="footer-badge"><img src="Company badges/Capital.png" alt="Capital badge"></div>
