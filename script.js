@@ -265,7 +265,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryCaption = document.getElementById('galleryCaption');
     const galleryCounter = document.getElementById('galleryCounter');
     const galleryActiveImage = document.getElementById('galleryActiveImage');
+    const backToTopButton = document.getElementById('backToTopButton');
     let currentGalleryIndex = 0;
+
+    const preservedLabelWords = new Set([
+        'The', 'Better', 'Hearth', 'SF', 'HE', 'SLE', 'PDF',
+        'Capital', 'Gazco', 'Stovax', 'Onyx', 'Solution', 'Mendip', 'Esse', 'Nordpeis',
+        'Westfire', 'Yeoman', 'F2', 'Vue', 'Landscape', 'Iconic', 'Ilektro', 'Blackthorn',
+        'Lombard', 'Fusion', 'Avanti', 'Milazzo', 'Suite', 'Huntingdon', 'Stockton',
+        'Vogue', 'Woodrow', 'Futura', 'Studio', 'Bassington', 'Eco', 'Midi', 'Holsworthy',
+        'Ashcott', 'Sheraton', 'Woodland', 'Uniq', 'Redbourn', 'Liv', 'Corvar', 'Logic',
+        'Designio', 'Provident', 'Riva2', 'Verve', 'Loft', 'Design', 'Line', 'William',
+        'Charlotte', 'Canonbury', 'Corbel', 'Bolection', 'Flat', 'Victorian', 'Roundel',
+        'Pompadour', 'Louis', 'XV', 'Cadogan', 'Olvera', 'Arts', 'Crafts', 'Arch'
+    ]);
+
+    function sentenceCaseLabel(text) {
+        return text.split(/(\s+-\s+)/).map((segment) => {
+            if (/^\s+-\s+$/.test(segment)) {
+                return segment;
+            }
+
+            const words = segment.match(/[A-Za-z0-9][A-Za-z0-9+'’-]*/g) || [];
+            let wordIndex = 0;
+
+            return segment.replace(/[A-Za-z0-9][A-Za-z0-9+'’-]*/g, (word) => {
+                const lowerWord = word.toLowerCase();
+                const isFirst = wordIndex === 0;
+                wordIndex += 1;
+
+                if (lowerWord === 'sf' || lowerWord === 'he' || lowerWord === 'sle' || lowerWord === 'pdf' || /^[ivx]+$/i.test(word)) {
+                    return word.toUpperCase();
+                }
+
+                if (preservedLabelWords.has(word) || /[a-z][A-Z]/.test(word) || /\d/.test(word) || word.includes('+')) {
+                    return word;
+                }
+
+                return isFirst ? lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1) : lowerWord;
+            });
+        }).join('');
+    }
 
     function getImageTitle(image) {
         const cardTitle = image.closest('.model-card')?.querySelector('.model-card-name')?.textContent;
@@ -347,13 +387,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function formatInstallationTitle(fileName) {
-        return fileName
+        const title = fileName
             .replace(/\.[^.]+$/, '')
             .replace(/\s*\(\d+\)\s*/g, ' ')
             .replace(/_/g, '')
             .replace(/\bhas fire\b/gi, 'gas fire')
             .replace(/\s+/g, ' ')
             .trim();
+
+        return sentenceCaseLabel(title);
     }
 
     function updateGalleryImage(index) {
@@ -418,6 +460,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return category ? category.name : "Mantels";
     }
 
+    function getCategoryId(categoryName) {
+        return `installation-category-${categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+    }
+
+    function renderInstallationCategoryNav(categories) {
+        const categoryNav = document.getElementById('installationCategoryNav');
+        if (!categoryNav || categories.length === 0) {
+            return;
+        }
+
+        categoryNav.innerHTML = '';
+
+        const navLabel = document.createElement('span');
+        navLabel.className = 'installation-category-nav-label';
+        navLabel.textContent = 'Jump to category';
+        categoryNav.appendChild(navLabel);
+
+        categories.forEach((category) => {
+            const navLink = document.createElement('a');
+            navLink.className = 'installation-category-nav-link';
+            navLink.href = `#${getCategoryId(category.name)}`;
+            navLink.textContent = category.name;
+            categoryNav.appendChild(navLink);
+        });
+    }
+
     function renderCategorizedInstallations(gridElement) {
         const groupedImages = new Map(installationCategories.map((category) => [category.name, []]));
 
@@ -426,15 +494,19 @@ document.addEventListener('DOMContentLoaded', () => {
             groupedImages.get(categoryName).push({ fileName, index });
         });
 
-        installationCategories.forEach((category) => {
+        const populatedCategories = installationCategories.filter((category) => {
             const categoryImages = groupedImages.get(category.name);
+            return categoryImages && categoryImages.length > 0;
+        });
 
-            if (!categoryImages || categoryImages.length === 0) {
-                return;
-            }
+        renderInstallationCategoryNav(populatedCategories);
+
+        populatedCategories.forEach((category) => {
+            const categoryImages = groupedImages.get(category.name);
 
             const categorySection = document.createElement('section');
             categorySection.className = 'installation-category';
+            categorySection.id = getCategoryId(category.name);
 
             const categoryTitle = document.createElement('h2');
             categoryTitle.className = 'installation-category-title';
@@ -528,6 +600,19 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (event.key === 'ArrowRight') {
                 updateGalleryImage(currentGalleryIndex + 1);
             }
+        });
+    }
+
+    if (backToTopButton) {
+        const toggleBackToTopButton = () => {
+            backToTopButton.classList.toggle('visible', window.scrollY > 500);
+        };
+
+        toggleBackToTopButton();
+        window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
