@@ -372,7 +372,64 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('modal-open');
     }
 
-    document.querySelectorAll('.product-image, .model-card-image img').forEach((image) => {
+    function ensureProductCardModal() {
+        let modal = document.getElementById('productCardModal');
+        if (modal) {
+            return modal;
+        }
+
+        modal = document.createElement('div');
+        modal.className = 'product-card-modal';
+        modal.id = 'productCardModal';
+        modal.setAttribute('aria-hidden', 'true');
+        modal.innerHTML = `
+            <div class="product-card-modal-backdrop" data-product-card-close></div>
+            <div class="product-card-modal-content" role="dialog" aria-modal="true" aria-label="Product details">
+                <button class="product-card-modal-close" type="button" data-product-card-close aria-label="Close product details">&times;</button>
+                <div class="product-card-modal-body"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        modal.querySelectorAll('[data-product-card-close]').forEach((closeButton) => {
+            closeButton.addEventListener('click', closeProductCardModal);
+        });
+
+        return modal;
+    }
+
+    function closeProductCardModal() {
+        const modal = document.getElementById('productCardModal');
+        if (!modal) {
+            return;
+        }
+
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    }
+
+    function openProductCardModal(card) {
+        const modal = ensureProductCardModal();
+        const modalBody = modal.querySelector('.product-card-modal-body');
+        const cardClone = card.cloneNode(true);
+
+        cardClone.classList.remove('is-expanded');
+        cardClone.classList.add('product-card-modal-card');
+        cardClone.removeAttribute('tabindex');
+        cardClone.removeAttribute('role');
+        cardClone.removeAttribute('aria-expanded');
+        cardClone.removeAttribute('aria-haspopup');
+        cardClone.removeAttribute('aria-label');
+
+        modalBody.innerHTML = '';
+        modalBody.appendChild(cardClone);
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+    }
+
+    document.querySelectorAll('.product-image').forEach((image) => {
         image.classList.add('clickable-gallery-image');
         image.tabIndex = 0;
         image.setAttribute('role', 'button');
@@ -382,6 +439,33 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 openImageLightbox(image);
+            }
+        });
+    });
+
+    document.querySelectorAll('.model-card').forEach((card) => {
+        const cardName = card.querySelector('.model-card-name')?.textContent?.trim() || 'Product details';
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-haspopup', 'dialog');
+        card.setAttribute('aria-label', `View details for ${cardName}`);
+
+        card.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                return;
+            }
+
+            openProductCardModal(card);
+        });
+
+        card.addEventListener('keydown', (event) => {
+            if (event.target.closest('a')) {
+                return;
+            }
+
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openProductCardModal(card);
             }
         });
     });
@@ -472,18 +556,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         categoryNav.innerHTML = '';
 
-        const navLabel = document.createElement('span');
+        const navLabel = document.createElement('label');
         navLabel.className = 'installation-category-nav-label';
-        navLabel.textContent = 'Jump to category';
+        navLabel.setAttribute('for', 'installationCategorySelect');
+        navLabel.textContent = 'Select category';
         categoryNav.appendChild(navLabel);
 
+        const categorySelect = document.createElement('select');
+        categorySelect.className = 'installation-category-select';
+        categorySelect.id = 'installationCategorySelect';
+
+        const placeholderOption = document.createElement('option');
+        placeholderOption.value = '';
+        placeholderOption.textContent = 'Choose a category';
+        categorySelect.appendChild(placeholderOption);
+
         categories.forEach((category) => {
-            const navLink = document.createElement('a');
-            navLink.className = 'installation-category-nav-link';
-            navLink.href = `#${getCategoryId(category.name)}`;
-            navLink.textContent = category.name;
-            categoryNav.appendChild(navLink);
+            const option = document.createElement('option');
+            option.value = getCategoryId(category.name);
+            option.textContent = category.name;
+            categorySelect.appendChild(option);
         });
+
+        categorySelect.addEventListener('change', () => {
+            if (!categorySelect.value) {
+                return;
+            }
+
+            document.getElementById(categorySelect.value)?.scrollIntoView({ behavior: 'smooth' });
+            categorySelect.value = '';
+        });
+
+        categoryNav.appendChild(categorySelect);
     }
 
     function renderCategorizedInstallations(gridElement) {
@@ -619,6 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             closeImageLightbox();
+            closeProductCardModal();
         }
     });
 });
