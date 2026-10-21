@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden mantels - The Better Hearth</title>
+    <link rel="icon" type="image/png" href="flame.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-page {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .product-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .product-header h1 {
+            font-size: 48px;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 18px;
+            color: #333;
+            text-align: justify;
+        }
+        .product-description p {
+            margin-bottom: 20px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: var(--color-primary-hover);
+        }
+        .models-section {
+            margin-top: 60px;
+        }
+        .models-title {
+            font-size: 36px;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        .model-card-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .model-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .model-card-name {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-content">
+            <a href="index.html" class="banner-logo-link" aria-label="Home"><img src="Better Hearth Logo.png" alt="" class="banner-logo"></a>
+            <button class="mobile-menu-button" type="button" aria-label="Open navigation menu">☰</button>
+            <a href="index.html" class="banner-button">Home</a>
+            <div class="products-dropdown">
+                <a href="#" class="banner-button">Products</a>
+                <div class="dropdown-menu">
+                    <a href="antiques-traditional.html" class="dropdown-item">Antique & traditional fireplaces</a>
+                    <a href="made-to-measure.html" class="dropdown-item">Made to measure gas fires</a>
+                    <a href="woodburning-multifuel.html" class="dropdown-item">Woodburning and multifuel stoves</a>
+                    <a href="inset-gas-fires.html" class="dropdown-item">Inset gas fires and stoves</a>
+                    <a href="electric-stoves.html" class="dropdown-item">Electric stoves & media wall fires</a>
+                    <a href="mantels.html" class="dropdown-item">Mantels</a>
+                    <a href="bioethanol-fires.html" class="dropdown-item">Bioethanol fires</a>
+                </div>
+            </div>
+            <a href="installations.html" class="banner-button">Installations</a>
+            <a href="showroom.html" class="banner-button">Our showroom</a>
+            <a href="index.html#contact" class="banner-button">Contact us</a>
+        </div>
+    </div>
+
+    <div class="product-page">
+        <div class="product-header">
+            <h1>Wooden mantels</h1>
+        </div>
+        
+        <img src="Category Descriptions- Photos/Subcategory - Wooden Mantels.png" alt="Wooden mantels" class="product-image">
+<div class="product-description">
+            <p>Wooden mantels are a traditional and more affordable alternative to stone mantels. They also have the flexibility of being made to size as standard and they can be painted.</p>
+            <p>In addition to the options below, we have more available from a variety of suppliers as well as one-off pieces in our showroom. Please contact us or see our suppliers page for more information.</p>
+        </div>
+
+        <nav class="installation-category-nav subcategory-page-nav" aria-label="Product subcategories">
+            <label class="installation-category-nav-label" for="subcategorySelect">Select category</label>
+            <select class="installation-category-select subcategory-page-select" id="subcategorySelect">
+                <option value="">Choose a category</option>
+                <option value="mantels-limestone-mantels.html">Limestone mantels</option>
+                <option value="mantels-marble-mantels.html">Marble mantels</option>
+                <option value="mantels-wooden-mantels.html" selected>Wooden mantels</option>
+            </select>
+        </nav>
+
+        <div class="models-section">
+            <h2 class="models-title">Products</h2>
+            <section class="product-subcategory-group" id="wooden-mantels">
+                <h3 class="product-subcategory-title">Wooden mantels</h3>
+                <div class="models-grid">
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Stove beam, rustic Geocast.jpg" alt="Stove beam, rustic geocast"></div><div class="model-card-name">Stove beam, rustic geocast</div><div class="model-card-details">
+                        <p class="model-card-description">Our non-combustible oak effect beams have been developed from a natural and extremely durable material and are moulded to achieve ultimate high definition creating a truly authentic look. Being non-combustible, our Geocast beams allow smaller clearance distances than natural wood.</p>
+                        <p class="model-card-description">Beautifully rustic yet sophisticated with a natural and dark oak finish, the Geocast Rustic Beam embraces a rural, country charm look and feel, perfect for the traditional home.</p>
+                        <p class="model-card-supplier-name"><strong>Supplier:</strong> Capital Fireplaces</p>
+                        <a href="https://www.capitalfireplaces.co.uk/stoves/stove-accessories/geocast-beams/" target="_blank" rel="noopener noreferrer" class="model-card-supplier">View Website</a>
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Stove beam, wooden classic oak.jpg" alt="Stove beam, wooden classic oak"></div><div class="model-card-name">Stove beam, wooden classic oak</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Stove beam, wooden dark oak.png" alt="Stove beam, wooden dark oak"></div><div class="model-card-name">Stove beam, wooden dark oak</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Bolection with shelf.jpg" alt="Wooden bolection with shelf"></div><div class="model-card-name">Wooden bolection with shelf</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Bolection.jpg" alt="Wooden bolection"></div><div class="model-card-name">Wooden bolection</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Corbel.png" alt="Wooden corbel"></div><div class="model-card-name">Wooden corbel</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Flat Victorian.jpeg" alt="Wooden flat victorian"></div><div class="model-card-name">Wooden flat victorian</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Gladstone.jpg" alt="Wooden gladstone"></div><div class="model-card-name">Wooden gladstone</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Reeded Roundel.png" alt="Wooden reeded roundel"></div><div class="model-card-name">Wooden reeded roundel</div><div class="model-card-details">
+
+                    </div></div>
+                    <div class="model-card"><div class="model-card-image"><img src="Products/Mantels/Wooden Mantels/Wooden Roundel.jpeg" alt="Wooden roundel"></div><div class="model-card-name">Wooden roundel</div><div class="model-card-details">
+
+                    </div></div>
+                </div>
+            </section>
+        </div>
+
+
+        
+        <div style="text-align: center;">
+            <a href="mantels.html" class="back-button">Back to mantels</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

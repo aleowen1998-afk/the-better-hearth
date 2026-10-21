@@ -1650,10 +1650,10 @@ body.modal-open {
     border-radius: 14px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
     display: block;
-    height: 360px;
+    height: auto;
     margin: 30px auto 0;
     max-width: 850px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
 
@@ -1822,14 +1822,9 @@ body.modal-open {
 }
 
 .supplier-card:hover,
-.supplier-card:focus-visible {
+.supplier-card:focus-within {
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
     transform: translateY(-4px);
-}
-
-.supplier-card:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 3px;
 }
 
 .supplier-logo {
@@ -1865,7 +1860,33 @@ body.modal-open {
 .supplier-card p {
     color: #555555;
     line-height: 1.65;
-    margin: 0;
+    margin: 0 0 22px;
+}
+
+.supplier-website-button {
+    align-self: flex-start;
+    background-color: var(--color-primary);
+    border-radius: 999px;
+    color: #ffffff;
+    display: inline-flex;
+    font-weight: 700;
+    justify-content: center;
+    margin-top: auto;
+    padding: 12px 22px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.supplier-website-button:hover,
+.supplier-website-button:focus-visible {
+    background-color: var(--color-primary-hover);
+    box-shadow: 0 6px 18px rgba(143, 29, 29, 0.28);
+    transform: translateY(-1px);
+}
+
+.supplier-website-button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
 }
 
 .subcategory-section {
@@ -1921,6 +1942,7 @@ body.modal-open {
 }
 
 .subcategory-card-image {
+    background: #f5f2ee;
     height: 190px;
     overflow: hidden;
 }
@@ -1928,14 +1950,9 @@ body.modal-open {
 .subcategory-card-image img {
     display: block;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.35s ease;
     width: 100%;
-}
-
-.subcategory-card:hover .subcategory-card-image img,
-.subcategory-card:focus-visible .subcategory-card-image img {
-    transform: scale(1.05);
 }
 
 .subcategory-card-content {
@@ -1993,11 +2010,12 @@ body .model-card:focus-visible {
 }
 
 body .model-card .model-card-image {
+    background: #f5f2ee;
     height: 280px;
 }
 
-body .model-card .model-card-name {
-    display: none;
+body .model-card .model-card-image img {
+    object-fit: contain;
 }
 
 .model-card-details {
@@ -2015,6 +2033,18 @@ body .model-card .model-card-name {
     line-height: 1.6;
     margin: 0;
     text-align: left;
+}
+
+.model-card-supplier-name {
+    color: #444444;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 4px 0 0;
+    text-align: center;
+}
+
+.model-card-supplier-name strong {
+    color: var(--color-primary);
 }
 
 .model-card-supplier {
@@ -2351,8 +2381,12 @@ body .product-card-modal-card .model-card-details {
         height: 96px;
     }
 
+    .supplier-website-button {
+        align-self: stretch;
+        text-align: center;
+    }
+
     .installations-page-image {
-        height: 240px;
         margin-top: 24px;
     }
 
@@ -2376,6 +2410,44 @@ body .product-card-modal-card .model-card-details {
         padding: 18px;
     }
 
+    body .product-page {
+        padding: 40px 16px;
+    }
+
+    body .product-header {
+        margin-bottom: 28px;
+    }
+
+    body .product-header h1 {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    body .product-image {
+        height: 260px;
+        margin: 24px auto;
+    }
+
+    body .product-description {
+        font-size: 1rem;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    body .models-section {
+        margin-top: 42px;
+    }
+
+    body .models-title {
+        font-size: 1.8rem;
+        margin-bottom: 28px;
+    }
+
+    body .models-grid {
+        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .product-subcategory-group {
         margin-bottom: 42px;
     }
@@ -2386,7 +2458,12 @@ body .product-card-modal-card .model-card-details {
     }
 
     body .model-card .model-card-image {
-        height: 220px;
+        height: 180px;
+    }
+
+    body .model-card-name {
+        font-size: 1rem;
+        padding: 14px;
     }
 
     .model-card-details {
@@ -2468,6 +2545,20 @@ body .product-card-modal-card .model-card-details {
 
     .footer-badges {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    body .models-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body .model-card .model-card-image {
+        height: 220px;
+    }
+
+    body .product-image {
+        height: 220px;
     }
 }
 
